@@ -41,7 +41,7 @@ public class RNNordicDfuModule extends ReactContextBaseJavaModule implements Lif
         starter.setPacketsReceiptNotificationsValue(1);
         starter.setUnsafeExperimentalButtonlessServiceInSecureDfuEnabled(true);
 
-        if (filePath.endsWith(".bin") || filePath.endsWith(".hex")) {
+        if (filePath.toLowerCase().endsWith(".bin") || filePath.toLowerCase().endsWith(".hex")) {
             starter.setBinOrHex(DfuBaseService.TYPE_APPLICATION, filePath).setInitFile(null, null);
         } else {
             starter.setZip(filePath);
